@@ -1,6 +1,6 @@
 ## Comand line
 ### Osnove
-Kalkulator, ki lahko izvaja aritmetične (+, -, *, %) in logične (and, or, not) operacije.
+Kalkulator, ki lahko izvaja aritmetične `(+, -, *, %)` in logične (and, or, not) operacije.
 
 Osnovno računanje. Seštevanje, odštevanje, množenje, deljenje
 
@@ -546,6 +546,46 @@ Izpis:
 ```
 Kako deluje?
 Preverjamo pogojni stavek x <= 5 in če je to enako True potem se zanka izvede.
+## FizzBuzz
+* Igra kjer se šteje od 1 naprej.<br>
+* Kjer je število deljivo z 3 rečemo Fizz<br>
+* Kjer je število deljivo z 5 rečemo Buzz<br>
+* Če je število deljivo z 3 in 5 naenkrat rečemo FizzBuzz<br>
+
+Program:
+```python
+i = 1
+while i<=16:
+    if i % 3 == 0 and i % 5 == 0:
+        print("FizzBuzz")
+    elif i % 3 == 0:
+            print("Fizz")
+    elif i%5 == 0:
+            print("Buzz")
+    else:
+            print(i)
+
+    i += 1
+```
+Izpis:
+```
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+16
+```
 
 
 
