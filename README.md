@@ -279,6 +279,273 @@ Kako ti je ime? Jaka
 'Jaka'
 ```
 ## Pogoji
+Logična vrednost oz. boolean
+True
+False
+
+Operandi ki delujejo na logičnih vrednostih:
+and
+or
+not
+
+Primeri:
+```python
+>>> True and True
+True
+>>> True and False
+False
+>>> True or False
+True
+>>> False or False
+False
+>>> not False
+True
+>>> False or not False
+True
+```
+Pri pogojih uporabljamo tudi naslednje operande:
+```python
+==
+!=
+<
+>
+<=
+>=
+```
+Primeri:
+```python
+>>> 1+2 == 3
+True
+>>> 1+2 != 4
+True
+>>> 1+2 < 3
+False
+```
+### Naloge  
+* BMI kalulator
+
+Kako se izračuna BMI?
+Težo v kilogramih deliš z kvadratom višine v metrih.
+
+Program:
+```python
+teza = float(input("Teža: "))
+visina = float(input("Telesna višina: "))
+bmi = teza / visina ** 2
+print("Vaš BMI je:", bmi)
+```
+Izpis:
+```python
+Teža: 63
+Telesna višina: 1.75
+Vaš BMI je: 20.571428571428573
+```
+* IF stavki
+Recimo da želimo povedati uporabniku, da je njegov BMI visok.
+
+Program:
+```python
+teza = float(input("Teža: "))
+visina = float(input("Telesna višina: "))
+bmi = teza / visina ** 2
+print("Vaš BMI je:", bmi)
+
+print("Vaš BMI je visok")
+```
+Izpis:
+```python
+Teža: 63
+Telesna višina: 1.75
+Vaš BMI je: 20.571428571428573
+Vaš BMI je visok
+```
+Tole ne bo šlo. Zdaj vsem povemo, da je njihov BMI visok.
+To lahko popravimo.
+
+Program:
+```python
+teza = float(input("Teža: "))
+visina = float(input("Telesna višina: "))
+bmi = teza / visina ** 2
+print("Vaš BMI je:", bmi)
+
+if bmi > 25:
+    print("Vaš BMI je visok")
+```
+Izpis:
+```python
+Teža: 63
+Telesna višina: 1.75
+Vaš BMI je: 20.571428571428573
+
+Teža: 90
+Telesna višina: 1.75
+Vaš BMI je: 29.387755102040817
+Vaš BMI je visok
+```
+Pri pisanju if stavka je potrebno paziti na:
+-	Dvopičje »:« na koncu stavka
+-	Zamik – presledek/presledki ali tab. Zamaknjene vrstice spadajo pod zapisan stavek.
+
+Te dve stvari ne veljata samo za if stavke, temveč tudi za nekaj drugih. (Katere, boš spoznal kasneje)
+Zamaknjenih vrstic je lahko več
+
+Program:
+```python
+teza = float(input("Teža: "))
+visina = float(input("Telesna višina: "))
+bmi = teza / visina ** 2
+print("Vaš BMI je:", bmi)
+
+if bmi > 25:
+    print("Vaš BMI je visok")
+    print("Pridite nazaj čez en mesec")
+```
+Izpis:
+```python
+Teža: 90
+Telesna višina: 1.75
+Vaš BMI je: 29.387755102040817
+Vaš BMI je visok
+Pridite nazaj čez en mesec
+```
+If stavek se izvede samo, če je pogoj (v našem primeru je pogoj bmi > 25) izpolnjen.
+Če želimo, da se nekaj zvede kadar pogoj ni izpolnjen uporabimo stavek else.
+
+Program:
+```python
+teza = float(input("Teža: "))
+visina = float(input("Telesna višina: "))
+bmi = teza / visina ** 2
+print("Vaš BMI je:", bmi)
+
+if bmi > 25:
+    print("Vaš BMI je visok")
+    print("Pridite nazaj čez en mesec")
+else:
+    print("Vaš BMI je v redu")
+```
+Izpis:
+```python
+Teža: 63
+Telesna višina: 1.75
+Vaš BMI je: 20.571428571428573
+Vaš BMI je v redu
+```
+If stavke lahko gnezdimo
+
+Program:
+```python
+teza = float(input("Teža: "))
+visina = float(input("Telesna višina: "))
+bmi = teza / visina ** 2
+print("Vaš BMI je:", bmi)
+
+if bmi > 25:
+    print("Vaš BMI je visok")
+    print("Pridite nazaj čez en mesec")
+else:
+    if bmi < 18.5:
+        print("Vaš BMI je nizek")
+    else:
+        print("Vaš BMI je v redu")
+
+print("Nasvidenje")
+```
+Izpis:
+```python
+Teža: 63
+Telesna višina: 1.75
+Vaš BMI je: 20.571428571428573
+Vaš BMI je v redu
+Nasvidenje
+
+Teža: 40
+Telesna višina: 1.75
+Vaš BMI je: 13.061224489795919
+Vaš BMI je nizek
+Nasvidenje
+
+Teža: 90
+Telesna višina: 1.75
+Vaš BMI je: 29.387755102040817
+Vaš BMI je visok
+Pridite nazaj čez en mesec
+Nasvidenje
+```
+To lahko skrajšamo
+
+Uporabili bomo stavek elif. Ta stavek združi else in if.
+```python
+else:
+    if bmi < 18.5:
+
+elif bmi < 18.5:
+```
+Program:
+```python
+teza = float(input("Teža: "))
+visina = float(input("Telesna višina: "))
+bmi = teza / visina ** 2
+print("Vaš BMI je:", bmi)
+
+if bmi > 25:
+    print("Vaš BMI je visok")
+    print("Pridite nazaj čez en mesec")
+elif bmi < 18.5:
+    print("Vaš BMI je nizek")
+else:
+    print("Vaš BMI je v redu")
+
+print("Nasvidenje")
+```
+Izpis:
+```python
+Teža: 63
+Telesna višina: 1.75
+Vaš BMI je: 20.571428571428573
+Vaš BMI je v redu
+Nasvidenje
+```
+## Zanke - loop
+Zanke imamo zato, da del programa ponavljamo.
+Poskusimo izpisati števila od 1 do 5 brez uporabe zanke.
+
+Program:
+```python
+print(1)
+print(2)
+print(3)
+print(4)
+print(5)
+```
+Izpis:
+```python
+1
+2
+3
+4
+5
+```
+
+Uporabimo lahko zanko while.
+Program:
+```python
+x = 1
+while x <= 5:
+    print(x)
+    x = x+1
+```
+Izpis:
+```python
+1
+2
+3
+4
+5
+```
+Kako deluje?
+Preverjamo pogojni stavek x <= 5 in če je to enako True potem se zanka izvede.
 
 
 
